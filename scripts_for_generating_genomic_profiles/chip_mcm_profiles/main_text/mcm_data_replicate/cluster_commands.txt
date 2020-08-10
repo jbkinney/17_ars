@@ -1,0 +1,36 @@
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E27-AG1-mcm228_S16_R1_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E27-AG1-mcm228_S16_R2_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E28-BG1-mcm228_S17_R1_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E28-BG1-mcm228_S17_R2_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E29-CG1-mcm228_S18_R1_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E29-CG1-mcm228_S18_R2_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E30-DG1-mcm228_S19_R1_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E30-DG1-mcm228_S19_R2_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E31-EG1-mcm228_S20_R1_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E31-EG1-mcm228_S20_R2_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E32-FG1-mcm228_S21_R1_001.fastq.gz .
+cp /seq/Illumina_runs/NextSeqData/NextSeqOutput/190503_NB551387_0203_AHKHY3AFXY/Data/Intensities/BaseCalls/303903/E32-FG1-mcm228_S21_R2_001.fastq.gz .
+
+
+#!/bin/bash
+# specify BASH shell
+#$ -S /bin/bash
+# run job in the current working directory where qsub is executed from
+#$ -cwd
+#  specify that the job requires 8GB of memory
+#$ -l m_mem_free=8G
+
+# run commands and application
+pwd
+date
+./map_reads.sh reads_chip_mcm_LID303903/E32-FG1-mcm228_S21_R1_001.fastq  reads_chip_mcm_LID303903/E32-FG1-mcm228_S21_R2_001.fastqq  genome/s288c.fa tmp/ chip_mcm_mrc1_rep2.txt stats_chip_mcm_mrc1_rep2.txt
+date
+
+/sonas-hs/kinney/hpc/home/tareen/projects/17_ars/paired_end_reads_script/reads_chip_mcm_LID303903
+
+chip_mcm_F485I_rep2.txt  
+chip_mcm_FA_YA_rep2.txt  
+chip_mcm_FI_YQ_rep2.txt  
+chip_mcm_mrc1_rep2.txt  
+chip_mcm_N489A_rep2.txt  
+chip_mcm_WT_rep2.txt
